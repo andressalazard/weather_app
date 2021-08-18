@@ -1,13 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Georama:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap");
+
+:root {
+  /*Font Families*/
+  --font-Georama: "Georama", sans-serif;
+  --font-Montserrat: "Montserrat", sans-serif;
+
+  /*Background Colors*/
+
+  --bkgrd_marine-tone01: "#585676";
+  --bkgrd_marine-tone02: "#1E213A";
+  --bkgrd_marine-tone03: "#100E1D";
+
+  --bkgrd_grey-tone01: "#E7E7EB";
+  --bkgrd_grey-tone02: "#6E707A";
+
+  /*Font Color*/
+  --font_grey-tone01: "#E7E7EB";
+  --font_grey-tone02: "#A09FB1";
+  --font_grey-tone03: "#88869D";
+  --font_marine-tone01: "#110E3C";
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-Georama);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }

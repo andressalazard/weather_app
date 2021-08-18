@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import LayoutPage from './pages/LayoutPage/LayoutPage';
 
