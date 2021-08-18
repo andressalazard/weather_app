@@ -1,0 +1,7 @@
+.container {
+  background-color: #ecdbdb;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
