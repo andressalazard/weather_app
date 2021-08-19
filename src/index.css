@@ -1,24 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Georama:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Georama:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&family=Raleway:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 :root {
   /*Font Families*/
   --font-Georama: "Georama", sans-serif;
+  --font-Raleway: "Raleway", sans-serif;
   --font-Montserrat: "Montserrat", sans-serif;
 
   /*Background Colors*/
 
-  --bkgrd_marine-tone01: "#585676";
-  --bkgrd_marine-tone02: "#1E213A";
-  --bkgrd_marine-tone03: "#100E1D";
+  --bkgrd_marine-tone01: #585676;
+  --bkgrd_marine-tone02: #1e213a;
+  --bkgrd_marine-tone03: #100e1d;
 
-  --bkgrd_grey-tone01: "#E7E7EB";
-  --bkgrd_grey-tone02: "#6E707A";
+  --bkgrd_grey-tone01: #e7e7eb;
+  --bkgrd_grey-tone02: #6e707a;
 
   /*Font Color*/
-  --font_grey-tone01: "#E7E7EB";
-  --font_grey-tone02: "#A09FB1";
-  --font_grey-tone03: "#88869D";
-  --font_marine-tone01: "#110E3C";
+  --font_grey-tone01: #e7e7eb;
+  --font_grey-tone02: #a09fb1;
+  --font_grey-tone03: #88869d;
+  --font_marine-tone01: #110e3c;
 }
 
 body {
@@ -26,6 +28,8 @@ body {
   font-family: var(--font-Georama);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  box-sizing: border-box;
 }
 
 code {
