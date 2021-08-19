@@ -1,0 +1,22 @@
+.container {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.background {
+  position: absolute;
+  height: 100%;
+  z-index: 1;
+
+  top: -1rem;
+  left: -1.75rem;
+  opacity: 0.2;
+}
+
+.weather_icon {
+  z-index: 2;
+  margin: 0;
+  transform: translateY(10%);
+  height: 35vh;
+}

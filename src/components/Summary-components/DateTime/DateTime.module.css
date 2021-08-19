@@ -1,0 +1,21 @@
+.container {
+  padding: 1.5rem;
+  display: block;
+}
+
+.datetime_section {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  margin: 0 1.5rem;
+  justify-content: space-between;
+}
+
+.datetime_section h1,
+.datetime_section p {
+  margin: 0;
+}
+
+.current_location {
+  text-align: center;
+}

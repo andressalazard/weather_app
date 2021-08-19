@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.container button {
+  border: none;
+  background-color: var(--bkgrd_grey-tone02);
+  color: var(--font_grey-tone01);
+  font-family: var(--font-Raleway);
+  align-items: center;
+
+  box-shadow: 5px 8px 10px rgba(25, 11, 58, 0.5), -5px 8px 10px rgba(25, 11, 58, 0.5);
+}
+
+.search_bttn {
+  padding: 0.75rem 1.25rem;
+}
+
+.my_location_bttn {
+  display: inline-flex;
+  padding: 0.5rem;
+  border-radius: 1.5rem;
+
+  font-size: 1.5rem;
+  align-content: center;
+}

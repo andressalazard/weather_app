@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+.container h1,
+.container h3 {
+  margin: 0;
+}
