@@ -6,9 +6,59 @@
 
   padding: 1rem;
   margin: 2rem 0;
+  gap: 3rem;
 }
 
-.container h1,
+.container h1 {
+  margin: 0;
+  font-size: 7rem;
+}
+
+.container span {
+  margin-left: 8px;
+  font-size: 3rem;
+}
+
 .container h3 {
   margin: 0;
+  font-size: 2rem;
+}
+
+/*Medium-Size Screen (lower than 992px)*/
+@media (max-width: 991.98px) {
+  .container h1 {
+    font-size: 8rem;
+  }
+  .container span {
+    font-size: 3.5rem;
+  }
+  .container h3 {
+    font-size: 2.25rem;
+  }
+}
+
+/*Small-Size Screen (lower than 768px)*/
+@media (max-width: 767.98px) {
+  .container h1 {
+    font-size: 9rem;
+  }
+  .container span {
+    font-size: 4rem;
+  }
+  .container h3 {
+    font-size: 2.5rem;
+  }
+}
+
+/*Smallest-Size Screen (lower than 576px)*/
+@media (max-width: 575.98px) {
+  .container h1 {
+    font-size: 10rem;
+  }
+  .container span {
+    font-size: 4.5rem;
+  }
+  .container h3 {
+    font-size: 2.75rem;
+  }
 }

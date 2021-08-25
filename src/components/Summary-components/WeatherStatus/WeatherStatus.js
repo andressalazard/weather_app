@@ -10,7 +10,7 @@ export default class WeatherStatus extends React.Component{
   render(){
     return (
       <div className={styles.container}>  
-          <h1>{Math.round(this.props.temp)}°C</h1>
+          <h1>{Math.round(this.props.temp)}<span>°C</span></h1>
           <h3>{this.props.weatherName}</h3>
       </div>
     )
