@@ -1,11 +1,46 @@
+import React from 'react';
 import WeatherSummary from '../../components/WeatherSummary/WeatherSummary';
+import { getWeatherData } from '../../external-files/consults';
 import styles from './LayoutPage.module.css';
 
-export default function LayoutPage(){
-  return(
-  <div className={styles.container}>
-    <WeatherSummary weatherInfo={{location: 'Quito', date: '18/8/2021'}}/>
-    <div>Here goes the Info Section</div>  
-  </div>
-  )
+export default class LayoutPage extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      weatherData : {},
+    }
+  }
+
+  componentDidMount(){
+    this.populateData();
+  }
+
+  async populateData(){
+    getWeatherData('bogotá')
+    .then(weatherData => {this.setState({weatherData})});
+  }
+
+  render(){
+    console.log(this.state.weatherData);
+    return(
+      <div className={styles.container}>
+        <WeatherSummary summaryData={this.setSummaryData()}/>
+        <div>Here goes the Info Section</div>  
+      </div>
+      )
+  }
+
+  setSummaryData(){
+    let weatherData = this.state.weatherData;
+    if(Object.keys(weatherData).length!==0){
+      const summaryData = {
+        title: weatherData.title,
+        current_weather: weatherData.consolidated_weather[0],
+        latt_long: weatherData.latt_long
+      };
+
+      return summaryData;
+    }
+  }
+
 }
