@@ -27,10 +27,8 @@ export default class WeatherSummary extends React.Component{
 
 
   displayWeatherStatus(){
-    let summaryData = this.props.summaryData;
-    let weatherData = this.getWeatherData(summaryData);
-    let dateTime = this.getDateTime();
-
+    let weatherData = this.getWeatherData();
+    
     return(
       <div>
         <div>
@@ -42,13 +40,14 @@ export default class WeatherSummary extends React.Component{
         </div>
 
         <DateTime
-          date={dateTime}
+          date={weatherData.dateTime}
           location={weatherData.location}/>
       </div>
     )
   }
 
-  getWeatherData(summaryData){
+  getWeatherData(){
+    let summaryData = this.props.summaryData;
     return {
       location: summaryData.title,
       temperature : summaryData
@@ -58,7 +57,8 @@ export default class WeatherSummary extends React.Component{
         .current_weather.weather_state_abbr,
         name : summaryData
         .current_weather.weather_state_name,
-      }
+      },
+      dateTime : this.getDateTime()
     }
   }
 
