@@ -7,11 +7,6 @@ const BACKGROUND_URL = '/images/background/Cloud-background.png';
 
 export default class WeatherIllustration extends React.Component{
   
-  componentDidUpdate(prevProps, prevState, snapshot){
-    console.log('My props: ', this.props);
-  }
-
-
   render(){
     return(
       <div className={styles.container}>

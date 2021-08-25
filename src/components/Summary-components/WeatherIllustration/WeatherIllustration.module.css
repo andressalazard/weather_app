@@ -2,21 +2,90 @@
   position: relative;
   overflow: hidden;
   text-align: center;
+
+  height: 40vh;
 }
 
 .background {
   position: absolute;
-  height: 100%;
+  height: 120%;
   z-index: 1;
 
-  top: -1rem;
-  left: -1.75rem;
+  top: -2.25rem;
+  left: -6.5rem;
   opacity: 0.2;
 }
 
 .weather_icon {
   z-index: 2;
   margin: 0;
-  transform: translateY(10%);
-  height: 35vh;
+  transform: translate(-10%, 25%);
+  height: 30vh;
+}
+
+/*Big-Size Screen (lower than 1200px)*/
+@media (max-width: 1199.98px) {
+  .container {
+    height: 36vh;
+  }
+
+  .weather_icon {
+    height: 28vh;
+    transform: translate(-8%, 18%);
+  }
+
+  .background {
+    height: 115%;
+    top: -2.25rem;
+    left: -6rem;
+  }
+}
+
+/*Medium-Size Screen (lower than 992px)*/
+@media (max-width: 991.98px) {
+  .container {
+    height: 35vh;
+  }
+
+  .weather_icon {
+    height: 27vh;
+  }
+
+  .background {
+    height: 118%;
+    top: -2rem;
+  }
+}
+
+/*Small-Size Screen (lower than 768px)*/
+@media (max-width: 767.98px) {
+  .container {
+    /*TO-DO*/
+  }
+
+  .background {
+    /*TO-DO*/
+  }
+
+  .weather_icon {
+    /*TO-DO*/
+  }
+}
+
+/*Smallest Screen (lower than 576px)*/
+@media (max-width: 575.98px) {
+  .container {
+    height: 55vh;
+  }
+
+  .background {
+    top: -3.75rem;
+    left: -10.5rem;
+    height: 115%;
+  }
+
+  .weather_icon {
+    height: 40vh;
+    transform: translate(-10%, 25%);
+  }
 }

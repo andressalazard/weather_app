@@ -5,7 +5,6 @@ import WeatherIllustration from "../Summary-components/WeatherIllustration/Weath
 import WeatherStatus from "../Summary-components/WeatherStatus/WeatherStatus";
 import DateTime from "../Summary-components/DateTime/DateTime";
 import SearchingZone from "../Summary-components/SearchingZone/SearchingZone";
-import { URL_WEATHER_DATA_SEARCH } from "../../external-files/consults";
 
 
 export default class WeatherSummary extends React.Component{
