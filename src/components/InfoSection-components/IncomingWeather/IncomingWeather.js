@@ -1,5 +1,5 @@
 import React from "react";
-import { weatherStateIcons, WEATHER_STATES_URL } from "../../../external-files/consults";
+import { daysList, monthsList, weatherStateIcons, WEATHER_STATES_URL } from "../../../external-files/consults";
 import styles from './IncomingWeather.module.css';
 
 
@@ -10,7 +10,8 @@ export default class IncomingWeather extends React.Component{
     return(
     <div className={styles.container}>
       <h3 className={styles.weather_date}>
-        {(this.props.data)&&this.props.data.date}
+        {(this.props.data)
+        && this.displayDate()}
       </h3>
       <div className={styles.icon_container}>
         {(this.props.data)&&this.displayStateIcon()}
@@ -45,5 +46,39 @@ export default class IncomingWeather extends React.Component{
           {Math.round(temp.min)}°C</h5>
       </div>
     )
+  }
+
+  displayDate(){
+    let data = this.props.data;
+    let dateData = data.date;
+    if(dateData.includes('-')){
+      let dateValues = dateData.split('-');
+      dateValues = dateValues.map((value)=>{
+        return parseInt(value)
+      });
+      let date = new Date(
+        dateValues[0],
+        dateValues[1]- 1,
+        dateValues[2]);
+
+      let dateFormat = {
+        day: daysList[date.getDay()],
+        date: date.getDate(),
+        month: monthsList[date.getMonth()]
+      }  
+      
+      return(
+        <div className={styles.marked_date}>
+         <h3>{dateFormat.day},</h3>
+         <h3>{dateFormat.date}</h3>
+         <h3>{dateFormat.month}</h3>
+        </div>
+      )
+    }
+    return (
+      <h3 className={styles.tomorrow_header}>
+        {dateData}
+      </h3>
+    );
   }
 }

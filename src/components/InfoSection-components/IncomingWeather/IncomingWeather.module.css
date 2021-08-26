@@ -44,3 +44,20 @@
 .min_temp {
   color: var(--font_grey-tone02);
 }
+
+.marked_date h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.marked_date {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+}
+
+.tomorrow_header {
+  margin: 0;
+  font-size: 1.5rem;
+}
