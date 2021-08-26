@@ -17,7 +17,7 @@ export default class LayoutPage extends React.Component{
   }
 
   async populateData(){
-    getWeatherData('bogotá')
+    getWeatherData('london')
     .then(weatherData => {this.setState({weatherData})});
   }
 
@@ -26,7 +26,7 @@ export default class LayoutPage extends React.Component{
     return(
       <div className={styles.container}>
         <WeatherSummary summaryData={this.setSummaryData()}/>
-        <InfoSection/>
+        <InfoSection weatherStatus={this.retrieveWeatherStatusData()}/>
       </div>
       )
   }
@@ -42,6 +42,14 @@ export default class LayoutPage extends React.Component{
 
       return summaryData;
     }
+  }
+
+  retrieveWeatherStatusData(){
+    let weatherData = this.state.weatherData;
+    if(Object.keys(weatherData).length!==0){
+      const statusData = weatherData.consolidated_weather;
+      return statusData;
+    };
   }
 
 }

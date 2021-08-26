@@ -57,6 +57,12 @@ export const weatherStateIcons = [
   },
 
   {
+    key: 'hc',
+    icon_url: 'HeavyCloud.png',
+    description: 'heavy cloud weather'
+  },
+
+  {
     key: 'lc',
     icon_url: 'LightCloud.png',
     description: 'light cloud weather'
@@ -92,6 +98,8 @@ export const weatherStateIcons = [
     description: 'thunderstorm weather'
   }
 ]
+
+export const WEATHER_STATES_URL= '/images/weatherStates/';
   
 
   
