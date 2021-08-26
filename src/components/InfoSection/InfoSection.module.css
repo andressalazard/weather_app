@@ -1,0 +1,13 @@
+.container {
+  grid-column: 3 / 12;
+  background-color: var(--bkgrd_marine-tone03);
+  color: var(--font_grey-tone01);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+
+  font-size: 1.5rem;
+}

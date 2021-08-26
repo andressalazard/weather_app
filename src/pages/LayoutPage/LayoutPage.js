@@ -1,4 +1,5 @@
 import React from 'react';
+import InfoSection from '../../components/InfoSection/InfoSection';
 import WeatherSummary from '../../components/WeatherSummary/WeatherSummary';
 import { getWeatherData } from '../../external-files/consults';
 import styles from './LayoutPage.module.css';
@@ -25,7 +26,7 @@ export default class LayoutPage extends React.Component{
     return(
       <div className={styles.container}>
         <WeatherSummary summaryData={this.setSummaryData()}/>
-        <div>Here goes the Info Section</div>  
+        <InfoSection/>
       </div>
       )
   }
