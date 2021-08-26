@@ -1,0 +1,28 @@
+.container {
+  width: 95%;
+  padding: 2rem 0;
+  padding-right: 3rem;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+}
+
+.temp_button {
+  border: none;
+  border-radius: 100%;
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: var(--bkgrd_marine-tone01);
+  color: var(--font_grey-tone01);
+
+  font-family: var(--font-Georama);
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.selected_bttn {
+  background-color: var(--bkgrd_grey-tone01);
+  color: var(--font_marine-tone01);
+  font-weight: 600;
+}
