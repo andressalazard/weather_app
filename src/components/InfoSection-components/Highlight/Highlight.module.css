@@ -1,7 +1,12 @@
 .container {
   width: 90%;
   padding: 1rem 2rem;
-  border: 1px solid yellow;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 1.75rem;
 }
 
 .stats_section {

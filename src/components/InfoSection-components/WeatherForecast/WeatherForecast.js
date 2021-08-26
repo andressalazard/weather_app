@@ -8,6 +8,10 @@ export default class WeatherForecast extends React.Component{
     return(
     <div className={styles.container}>
       <IncomingWeather/>
+      <IncomingWeather/>
+      <IncomingWeather/>
+      <IncomingWeather/>
+      <IncomingWeather/>
     </div>
     )
   }

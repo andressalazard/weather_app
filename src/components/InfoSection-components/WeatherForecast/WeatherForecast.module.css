@@ -1,4 +1,7 @@
 .container {
-  width: 100%;
-  border: 1px solid red;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateX(3.5%);
+  margin: 1rem 0;
 }

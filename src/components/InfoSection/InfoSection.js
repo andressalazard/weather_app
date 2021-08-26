@@ -12,7 +12,11 @@ export default class InfoSection extends React.Component{
         <TemperatureConverter/>
         <WeatherForecast/>
         <Highlight/>
-        <div>Here goes the footer section</div>
+        <div className={styles.footer}>
+        <p>Created by <a href={'https://github.com/andressalazard/'}>
+          andressalazard
+        </a> - devChallenges.io</p>
+        </div>
       </div>
     )
   }

@@ -20,8 +20,8 @@
 }
 
 .weather_state {
-  width: 55%;
-  height: 55%;
+  width: 80%;
+  height: 80%;
 
   /*Later change this images and remove this field*/
   transform: translateX(-15%);
