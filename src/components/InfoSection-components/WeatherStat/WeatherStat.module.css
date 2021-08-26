@@ -1,0 +1,18 @@
+.container {
+  background-color: var(--bkgrd_marine-tone02);
+  width: 49%;
+
+  text-align: center;
+}
+
+.stat_title {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.stat_content {
+  margin-top: 2rem;
+  padding: 1rem;
+  padding-bottom: 2rem;
+}

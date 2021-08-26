@@ -15,7 +15,7 @@ export default class IncomingWeather extends React.Component{
       </div>
       <div className={styles.weather_temp}>
         <h5 className={styles.temp_value}>16°C</h5>
-        <h5 className={styles.temp_value}>11°C</h5>
+        <h5 className={[styles.temp_value, styles.min_temp].join(' ')}>11°C</h5>
       </div>
     </div>
     )

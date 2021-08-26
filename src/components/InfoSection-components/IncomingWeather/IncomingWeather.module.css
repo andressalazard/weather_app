@@ -12,10 +12,11 @@
 }
 
 .weather_date {
+  margin: 0.5rem 0;
 }
 
 .icon_container {
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
 }
 
 .weather_state {
@@ -29,10 +30,17 @@
 .weather_temp {
   display: flex;
   padding: 1rem;
+  padding-bottom: 0.5rem;
   justify-content: center;
   gap: 0.75rem;
 }
 
 .weather_temp h5 {
   margin: 0;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.min_temp {
+  color: var(--font_grey-tone02);
 }
