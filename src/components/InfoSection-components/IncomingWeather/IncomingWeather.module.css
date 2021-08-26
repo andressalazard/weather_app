@@ -1,0 +1,38 @@
+.container {
+  width: 14%;
+  background-color: var(--bkgrd_marine-tone02);
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+
+  font-size: 1rem;
+}
+
+.weather_date {
+}
+
+.icon_container {
+  margin: 0.5rem 0;
+}
+
+.weather_state {
+  width: 55%;
+  height: 55%;
+
+  /*Later change this images and remove this field*/
+  transform: translateX(-15%);
+}
+
+.weather_temp {
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.weather_temp h5 {
+  margin: 0;
+}
