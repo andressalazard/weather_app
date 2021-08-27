@@ -1,0 +1,39 @@
+.container {
+}
+
+.wind_value {
+  display: flex;
+  justify-content: center;
+}
+
+.wind_value h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.wind_value h4 {
+  margin: 0;
+  font-size: 1.75rem;
+  transform: translateY(20%);
+}
+
+.wind_direction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.compass {
+  background-color: var(--bkgrd_marine-tone01);
+  color: var(--font_grey-tone01);
+  width: 3rem;
+  height: 3rem;
+
+  border: none;
+  border-radius: 100%;
+}
+
+.wind_direction h3 {
+  margin: 0;
+}

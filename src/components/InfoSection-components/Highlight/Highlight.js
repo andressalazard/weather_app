@@ -11,10 +11,10 @@ export default class Highlight extends React.Component{
           Today's Highlights
         </h1>
         <div className={styles.stats_section}>
-          <WeatherStat/>
-          <WeatherStat/>
-          <WeatherStat/>
-          <WeatherStat/>
+          <WeatherStat type={"WIND"}/>
+          <WeatherStat type={"HUMD"}/>
+          <WeatherStat type={""}/>
+          <WeatherStat type={""}/>
         </div>
       </div>
     )

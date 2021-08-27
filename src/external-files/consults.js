@@ -100,6 +100,14 @@ export const weatherStateIcons = [
 ]
 
 export const WEATHER_STATES_URL= '/images/weatherStates/';
+
+export const weatherStatsList = [
+  { key: 'WIND', title: 'Wind Status'},
+  { key: 'HUMD', title: 'Humidity'},
+  { key: 'VISB', title: 'Visibility'},
+  { key: 'AIRP', title: 'Air Pressure'},
+]
+  
   
 
   
