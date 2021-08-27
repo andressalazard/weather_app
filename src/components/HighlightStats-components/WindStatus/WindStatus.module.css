@@ -4,11 +4,12 @@
 .wind_value {
   display: flex;
   justify-content: center;
+  margin: 1.5rem 0;
 }
 
 .wind_value h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 
 .wind_value h4 {
@@ -27,13 +28,18 @@
 .compass {
   background-color: var(--bkgrd_marine-tone01);
   color: var(--font_grey-tone01);
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
 
   border: none;
   border-radius: 100%;
 }
 
+.compass span {
+  font-size: 1.25rem;
+}
+
 .wind_direction h3 {
   margin: 0;
+  font-size: 1.25rem;
 }

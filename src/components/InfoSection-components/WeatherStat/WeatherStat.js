@@ -1,6 +1,8 @@
 import React from "react";
 import { weatherStatsList } from "../../../external-files/consults";
+import AirPressure from "../../HighlightStats-components/AirPressure/AirPressure";
 import Humidity from "../../HighlightStats-components/Humidity/Humidity";
+import Visibility from "../../HighlightStats-components/Visibility/Visibility";
 import WindStatus from "../../HighlightStats-components/WindStatus/WindStatus";
 import styles from './WeatherStat.module.css';
 
@@ -22,7 +24,13 @@ export default class WeatherStat extends React.Component{
       return <Humidity/>;
     }
 
-    return '';
+    if(type===weatherStatsList[2].key){
+      return <Visibility/>;
+    }
+
+    if(type===weatherStatsList[3].key){
+      return <AirPressure/>;
+    }
     
   }
 

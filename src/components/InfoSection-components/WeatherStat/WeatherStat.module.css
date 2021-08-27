@@ -1,8 +1,8 @@
 .container {
   background-color: var(--bkgrd_marine-tone02);
-  width: 49%;
-
+  width: 48%;
   text-align: center;
+  font-family: var(--font-Raleway);
 }
 
 .stat_title {
@@ -14,5 +14,5 @@
 .stat_content {
   margin-top: 1rem;
   padding: 0 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
 }

@@ -17,7 +17,7 @@ export default class WindStatus extends React.Component{
               navigation
               </span>
             </button>
-            <h3>Wind Direction!</h3>
+            <h3>WSW</h3>
          </div> 
       </div>
     )

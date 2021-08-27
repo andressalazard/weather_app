@@ -8,11 +8,45 @@
 
 .humidity_value h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 
 .humidity_value h4 {
   margin: 0;
   font-size: 1.75rem;
   transform: translateY(20%);
+}
+
+.bar_container {
+  display: block;
+  /* border: 1px solid red; */
+  width: 88%;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.bar_header {
+  display: flex;
+  width: 100%;
+  /* border: 1px solid yellow; */
+  justify-content: space-between;
+}
+
+.bar_header h6 {
+  margin: 0;
+}
+
+.progress_status {
+  border: 1px solid var(--bkgrd_marine-tone03);
+  width: 100%;
+  margin-top: 0.125rem;
+  height: 1.25rem;
+  background-color: var(--bkgrd_grey-tone01);
+  border-radius: 10px;
+}
+
+.progress_bar {
+  border-radius: 10px;
+  background-color: var(--bkgrd_yellow_tone);
+  height: 1.25rem;
 }

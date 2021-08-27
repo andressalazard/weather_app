@@ -13,8 +13,8 @@ export default class Highlight extends React.Component{
         <div className={styles.stats_section}>
           <WeatherStat type={"WIND"}/>
           <WeatherStat type={"HUMD"}/>
-          <WeatherStat type={""}/>
-          <WeatherStat type={""}/>
+          <WeatherStat type={"VISB"}/>
+          <WeatherStat type={"AIRP"}/>
         </div>
       </div>
     )

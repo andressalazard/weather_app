@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.container h1,
+h3 {
+  margin: 0;
+}
+
+.container h1 {
+  font-size: 3.5rem;
+}
+
+.container h3 {
+  transform: translateY(30%);
+}

@@ -9,10 +9,10 @@ export default class IncomingWeather extends React.Component{
   render(){
     return(
     <div className={styles.container}>
-      <h3 className={styles.weather_date}>
+      <div className={styles.weather_date}>
         {(this.props.data)
         && this.displayDate()}
-      </h3>
+      </div>
       <div className={styles.icon_container}>
         {(this.props.data)&&this.displayStateIcon()}
       </div>
