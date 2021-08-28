@@ -6,10 +6,6 @@ import styles from './InfoSection.module.css';
 
 export default class InfoSection extends React.Component{
 
-  // componentDidUpdate(prevProps, prevState, snapshot){
-  //   console.log('I receive this =>', this.props.weatherStatus);
-  // }
-
   render(){
     this.setForecastData();
 
@@ -18,7 +14,8 @@ export default class InfoSection extends React.Component{
         <TemperatureConverter/>
         <WeatherForecast
             forecastData={this.setForecastData()}/>
-        <Highlight/>
+        <Highlight 
+            highlightData={this.setHighLightData()}/>
         <div className={styles.footer}>
         <p>Created by <a href={'https://github.com/andressalazard/'}>
           andressalazard
@@ -44,6 +41,13 @@ export default class InfoSection extends React.Component{
           }
         }
       }).slice(1);
+    }
+  }
+
+  setHighLightData(){
+    let weatherData = this.props.weatherStatus;
+    if(weatherData!==undefined){
+      return weatherData[0];
     }
   }
 }

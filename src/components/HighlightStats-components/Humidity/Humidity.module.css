@@ -36,17 +36,18 @@
   margin: 0;
 }
 
-.progress_status {
+.progress_bar_container {
   border: 1px solid var(--bkgrd_marine-tone03);
   width: 100%;
   margin-top: 0.125rem;
   height: 1.25rem;
-  background-color: var(--bkgrd_grey-tone01);
+  background-color: var(--bkgrd_grey-tone02);
   border-radius: 10px;
 }
 
-.progress_bar {
+.bar_status {
   border-radius: 10px;
   background-color: var(--bkgrd_yellow_tone);
   height: 1.25rem;
+  width: 0%;
 }

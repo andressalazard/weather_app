@@ -7,38 +7,46 @@ import WindStatus from "../../HighlightStats-components/WindStatus/WindStatus";
 import styles from './WeatherStat.module.css';
 
 export default class WeatherStat extends React.Component{
+  
+  componentDidUpdate(prevProps, prevState, snapshot){
+    console.log('I receive this =>', this.props.statData);
+  }
+  
   render(){
     return(
-      (this.props.type)&&this.displayStatCard()
+      (this.props.statData!==undefined)
+        &&this.displayStatCard()
     )
     
   }
 
 
-  displayContent(type){
+  displayContent(type, data){
+
     if(type===weatherStatsList[0].key){
-      return <WindStatus/>;
+      return <WindStatus data={data}/>;
     }
 
     if(type===weatherStatsList[1].key){
-      return <Humidity/>;
+      return <Humidity data={data}/>;
     }
 
     if(type===weatherStatsList[2].key){
-      return <Visibility/>;
+      return <Visibility data={data}/>;
     }
 
     if(type===weatherStatsList[3].key){
-      return <AirPressure/>;
+      return <AirPressure data={data}/>;
     }
     
   }
 
   displayStatCard(){
-    let type = this.props.type,
+    let statData = this.props.statData;
+    let type = statData.type, data = statData.data,
         statInfo = weatherStatsList
           .find((stat)=>{return stat.key === type}),
-        content = this.displayContent(type);
+        content = this.displayContent(type, data);
 
     return(
       <div className={styles.container}>
