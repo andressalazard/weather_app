@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from './Humidity.module.css';
 
 export default class Humidity extends React.Component{
@@ -19,7 +19,7 @@ export default class Humidity extends React.Component{
   animateProgressBar(){
     if(this.props.data!==undefined){
       let value = Math.round(this.props.data.humidity);
-      setInterval(()=>{this.changeCompleteStatus(value)},10);
+      setInterval(()=>{this.changeCompleteStatus(value)},30);
     }
   }
 
@@ -32,11 +32,10 @@ export default class Humidity extends React.Component{
 
   render(){
 
-    let data = this.props.data;
     return(
       <div className={styles.container}>
         <div className={styles.humidity_value}>
-          <h1>{Math.round(data.humidity)}</h1>
+          <h1>{this.state.completed}</h1>
           <h4>%</h4>
         </div>
         <div className={styles.bar_container}>
@@ -80,7 +79,6 @@ const ProgressBar = (props)=>{
     width: `${completed}%`,
     transition: 'width 1s ease-in-out',
   }
-
   return(
     <div className={styles.progress_bar_container}>
       <div style={filler_styles}>
