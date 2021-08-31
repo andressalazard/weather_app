@@ -1,4 +1,5 @@
 import React from 'react';
+import { compassPoints } from '../../../external-files/consults';
 import styles from './WindStatus.module.css';
 
 
@@ -40,8 +41,17 @@ export default class WindStatus extends React.Component{
   }
 
   handleDegreesChange(value){
+    let windCompass = this.props
+    .data.windCompass;
+
+    let compassPoint = compassPoints
+      .find((point) =>{
+        return point.key === windCompass;
+      });
+
+    
     let degrees = this.state.degrees;
-    if(degrees < 180){
+    if(degrees < compassPoint.degree){
       this.setState({degrees: degrees + 1})
     }
   }
@@ -79,7 +89,7 @@ const WindCompass = (props) => {
     <div className={styles.wind_direction}>
       {/* <button className={styles.compass}> */}
       <button style={compass_style}>
-        <span className={"material-icons"}>
+        <span className={["material-icons", styles.compass_icon].join(' ')}>
           navigation
         </span>
       </button>

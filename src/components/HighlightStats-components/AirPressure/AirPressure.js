@@ -4,15 +4,34 @@ import styles from './AirPressure.module.css';
 
 export default class AirPressure extends React.Component{
   
-  componentDidUpdate(prevProps, prevState, snapshot){
-    console.log('I receive this =>', this.props.data);
+  constructor(props){
+    super(props);
+    this.state = {
+      airCounter: 0
+    }
+  }
+  
+  componentDidMount(){
+    setInterval(()=>{
+      this.handleChangeCounter();
+    }, 5);
+
+  }
+
+  handleChangeCounter(){
+    let data = this.props.data;
+    let counter = this.state.airCounter;
+    if(counter<data.airPressure){
+      this.setState({
+        airCounter: counter + 1
+      })
+    }
   }
   
   render(){
-    let data = this.props.data;
     return(
       <div className={styles.container}>
-        <h1 className={styles.value}>{data.airPressure}</h1>
+        <h1 className={styles.value}>{this.state.airCounter}</h1>
         <h3 className={styles.units}>mb</h3>
       </div>
     )

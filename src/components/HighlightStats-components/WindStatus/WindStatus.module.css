@@ -37,7 +37,7 @@
   transition: transform 1s ease-in-out;
 }
 
-.compass span {
+.compass_icon {
   font-size: 1.25rem;
 }
 

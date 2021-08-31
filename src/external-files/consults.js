@@ -107,6 +107,26 @@ export const weatherStatsList = [
   { key: 'VISB', title: 'Visibility'},
   { key: 'AIRP', title: 'Air Pressure'},
 ]
+
+export const compassPoints = [
+  {key: 'N', degree:'0'},
+  {key: 'NNE', degree:'22.5'},
+  {key: 'NE', degree:'45'},
+  {key: 'ENE', degree:'67.5'},
+  {key: 'E', degree:'90'},
+  {key: 'ESE', degree:'112.5'},
+  {key: 'SE', degree:'135'},
+  {key: 'SSE', degree:'157.5'},
+  {key: 'S', degree:'180'},
+  {key: 'SSW', degree:'202.5'},
+  {key: 'SW', degree:'225'},
+  {key: 'WSW', degree:'247.5'},
+  {key: 'W', degree:'270'},
+  {key: 'WNW', degree:'292.5'},
+  {key: 'NW', degree:'315'},
+  {key: 'NNW', degree:'337.5'},
+
+]
   
   
 

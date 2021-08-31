@@ -17,7 +17,7 @@ export default class LayoutPage extends React.Component{
   }
 
   async populateData(){
-    getWeatherData('london')
+    getWeatherData('new york')
     .then(weatherData => {this.setState({weatherData})});
   }
 
