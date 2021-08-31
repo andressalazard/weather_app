@@ -3,10 +3,6 @@ import styles from './WeatherStatus.module.css';
 
 export default class WeatherStatus extends React.Component{
   
-  componentDidUpdate(prevProps, prevState, snapshot){
-    console.log('I get this: ',this.props);
-  }
-
   render(){
     return (
       <div className={styles.container}>  

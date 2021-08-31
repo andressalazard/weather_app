@@ -5,24 +5,39 @@ import WeatherIllustration from "../Summary-components/WeatherIllustration/Weath
 import WeatherStatus from "../Summary-components/WeatherStatus/WeatherStatus";
 import DateTime from "../Summary-components/DateTime/DateTime";
 import SearchingZone from "../Summary-components/SearchingZone/SearchingZone";
+import ButtonsZone from "../Summary-components/ButtonsZone/ButtonsZone";
 
 
 export default class WeatherSummary extends React.Component{
 
-  componentDidUpdate(prevProps, prevState, snapshot){
-    console.log('props in child component', this.props.summaryData);
+  constructor(props){
+    super(props);
+
+    this.state = {
+      isSearching : false,
+    }
+
+    this.handleSearchZoneChange = this.handleSearchZoneChange.bind(this);
   }
 
-  componentDidMount(){
-  }
 
+  handleSearchZoneChange(){
+    let searchFlag = this.state.isSearching;
+    this.setState({isSearching: !searchFlag});
+  }
+  
   render(){
     return(
     <div className={styles.container}>
-      <SearchingZone/>
+      <SearchingZone 
+        zoneOpened={this.state.isSearching}
+        changeHandler = {this.handleSearchZoneChange}
+      />
+      <ButtonsZone displaySearchZone={this.handleSearchZoneChange}/>
       {(this.props.summaryData) 
-        && this.displayWeatherStatus()}
+      && this.displayWeatherStatus()}
     </div>);
+
   }
 
 
@@ -71,4 +86,6 @@ export default class WeatherSummary extends React.Component{
     } 
   }
 
+
 }
+

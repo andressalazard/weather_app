@@ -1,28 +1,63 @@
 .container {
-  display: flex;
-  justify-content: space-between;
-  padding: 1.5rem;
+  background-color: var(--bkgrd_marine-tone02);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in-out;
 }
 
-.container button {
+.open_container {
+  transform: translateX(0%);
+}
+
+.header {
+  padding: 1rem;
+  text-align: end;
+}
+
+.close_button {
+  background-color: transparent;
   border: none;
-  background-color: var(--bkgrd_grey-tone02);
   color: var(--font_grey-tone01);
-  font-family: var(--font-Raleway);
-  align-items: center;
-
-  box-shadow: 5px 8px 10px rgba(25, 11, 58, 0.5), -5px 8px 10px rgba(25, 11, 58, 0.5);
 }
 
-.search_bttn {
-  padding: 0.75rem 1.25rem;
+.search_form {
+  margin-top: 1rem;
+  display: flex;
+  gap: 3%;
 }
 
-.my_location_bttn {
-  display: inline-flex;
-  padding: 0.5rem;
-  border-radius: 1.5rem;
+.input_field {
+  background-color: var(--bkgrd_grey-tone01);
+  width: 70%;
+  border-radius: 0.25rem;
+  display: flex;
+  align-content: flex-start;
+}
 
-  font-size: 1.5rem;
-  align-content: center;
+.input_field input {
+  border: none;
+  background-color: transparent;
+
+  padding: 0.75rem 0;
+
+  font-size: 0.875rem;
+}
+
+.input_field span {
+  padding: 0.75rem 0.5rem;
+  padding-right: 0.25rem;
+}
+
+.search_form button {
+  width: 30%;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: var(--bkgrd_yellow_tone);
+  color: var(--font_marine-tone01);
+  font-weight: 500;
+  font-size: 1rem;
 }
