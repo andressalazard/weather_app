@@ -15,6 +15,7 @@ export default class WeatherSummary extends React.Component{
 
     this.state = {
       isSearching : false,
+      currentLocation : {}
     }
 
     this.handleSearchZoneChange = this.handleSearchZoneChange.bind(this);
@@ -29,7 +30,11 @@ export default class WeatherSummary extends React.Component{
   render(){
     return(
     <div className={styles.container}>
-      <SearchingZone 
+      <SearchingZone
+        locationsList = {this.props.locationsList}
+        searchLocation = {this.props.searchLocation}
+        clearList = {this.props.clearList} 
+        changeLocation = {this.props.changeLocation}
         zoneOpened={this.state.isSearching}
         changeHandler = {this.handleSearchZoneChange}
       />

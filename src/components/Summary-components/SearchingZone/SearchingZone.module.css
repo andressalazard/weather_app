@@ -85,6 +85,8 @@
   padding: 0.5rem 1rem;
   border: 2px solid var(--bkgrd_grey-tone02);
   border-radius: 0.25rem;
+  background-color: transparent;
+  color: var(--font_grey-tone02);
 
   display: flex;
   justify-content: space-between;

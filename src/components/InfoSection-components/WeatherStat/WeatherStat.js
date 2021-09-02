@@ -8,9 +8,6 @@ import styles from './WeatherStat.module.css';
 
 export default class WeatherStat extends React.Component{
   
-  componentDidUpdate(prevProps, prevState, snapshot){
-    console.log('I receive this =>', this.props.statData);
-  }
   
   render(){
     return(

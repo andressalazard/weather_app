@@ -16,7 +16,8 @@ export default class SearchingZone extends React.Component{
   }
 
   componentDidUpdate(prevProps){
-    if(prevProps !== this.props){
+    // if(prevProps !== this.props){
+    if(prevProps.zoneOpened !== this.props.zoneOpened){
       let zoneFlag = this.props.zoneOpened;
       let stylesList = this.state.stylesList;
       if(zoneFlag){
@@ -29,6 +30,7 @@ export default class SearchingZone extends React.Component{
           stylesList.pop();
           this.setState({stylesList})
         }
+        this.clearValues();
       }
     } 
   }
@@ -37,9 +39,16 @@ export default class SearchingZone extends React.Component{
     this.setState({searchValue: event.target.value});
   }
 
+  clearValues(){
+    this.props.clearList();
+    this.setState({searchValue: ''})
+  }
+
   handleSubmit(event){
     event.preventDefault();
-    console.log('valor ingresado: ',this.state.searchValue);
+
+    let keyword = this.state.searchValue;
+    this.props.searchLocation(keyword);
   }
   
   render(){
@@ -74,12 +83,15 @@ export default class SearchingZone extends React.Component{
   }
 
   displayResults(){
-    let array = ['value1','value2','value3','value4','value5'];
+    let locationsList = this.props.locationsList;
 
-    return (
+    return ((locationsList.length>0)&&
       <div className={styles.search_results}>
-        {array.map((value, index) => {
-          return(<SearchResult value={value} key={index}/>)
+        {locationsList.map((value, index) => {
+          return(<SearchResult 
+            value={value} key={index}
+            selectLocation = {this.props.changeLocation}
+            />)
         })}
       </div>
     )
@@ -93,9 +105,10 @@ const SearchResult = (props) => {
   let { value } = props;
 
   return(
-    <div className={styles.result_container}>
-      <h1>{value}</h1>
+    <button className={styles.result_container} onClick={()=>{
+      props.selectLocation(value)}}>
+      <h1>{value.title}</h1>
       <span className={["material-icons",styles.result_icon].join(' ')}>navigate_next</span>
-    </div>
+    </button>
   )
 }
