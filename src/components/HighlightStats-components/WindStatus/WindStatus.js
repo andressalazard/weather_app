@@ -15,32 +15,42 @@ export default class WindStatus extends React.Component{
     }
   }
 
-
-  componentDidMount(){
-    let data = this.props.data;
-    if(data!==undefined){
-      let windSpeed = Math.round(data.windSpeed),
-          windDirection = Math.round(data.windDirection);
-      setInterval(() => {
-        this.handleStatusChange(windSpeed);
-      }, 85);
-
-      setInterval(() => {
-        this.handleDegreesChange(windDirection);
-      }, 10)
-
+  componentDidUpdate(prevProps){
+    if(prevProps!==this.props){
+      this.clearValues();
+     this.displayValues();
     }
-
   }
 
-  handleStatusChange(value){
+
+  componentDidMount(){
+    this.displayValues();
+  }
+
+  clearValues(){
+    this.setState({speedStatus: 0});
+    this.setState({degrees: 0});
+  }
+
+  displayValues(){
+    setInterval(() => {
+      this.handleStatusChange();
+    }, 400);
+
+    setInterval(() => {
+      this.handleDegreesChange();
+    }, 10)
+  }
+
+  handleStatusChange(){
+    let windSpeed = this.props.data.windSpeed;
     let speedStatus = this.state.speedStatus;
-    if(speedStatus < value){
+    if(speedStatus < windSpeed){
       this.setState({speedStatus: speedStatus + 1})
     }
   }
 
-  handleDegreesChange(value){
+  handleDegreesChange(){
     let windCompass = this.props
     .data.windCompass;
 

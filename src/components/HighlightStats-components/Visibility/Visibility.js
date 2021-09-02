@@ -11,11 +11,25 @@ export default class Visibility extends React.Component{
   }
   
   componentDidMount(){
-    setInterval(()=>{
-      this.handleCounterChange();
-    },15);
+    this.displayCounterValue();
   }
 
+  componentDidUpdate(prevProps){
+    if(prevProps!==this.props){
+      this.clearValues();
+      this.displayCounterValue();
+    }
+  }
+
+  clearValues(){
+    this.setState({visibilityCounter: 0})
+  }
+
+  displayCounterValue(){
+    setInterval(()=>{
+      this.handleCounterChange();
+    },8);
+  }
 
   
   render(){

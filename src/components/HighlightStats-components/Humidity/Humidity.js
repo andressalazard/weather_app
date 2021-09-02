@@ -16,16 +16,26 @@ export default class Humidity extends React.Component{
     this.animateProgressBar();
   }
 
-  animateProgressBar(){
-    if(this.props.data!==undefined){
-      let value = Math.round(this.props.data.humidity);
-      setInterval(()=>{this.changeCompleteStatus(value)},30);
+  componentDidUpdate(prevProps){
+    if(prevProps!==this.props){
+      this.clearValues();
+      this.animateProgressBar();
     }
   }
 
+  clearValues(){
+    this.setState({completed: 0})
+  } 
+
+  animateProgressBar(){
+    setInterval(()=>{
+      this.changeCompleteStatus()},30);
+  }
+
   changeCompleteStatus(value){
+    let humidity = Math.round(this.props.data.humidity);
     let completed = this.state.completed;
-    if(completed<value){
+    if(completed<humidity){
       this.setState({completed: completed + 1})
     }
   }
@@ -48,23 +58,6 @@ export default class Humidity extends React.Component{
         </div>
       </div>
     )
-  }
-
-  displayProgressBar(){
-    if(this.props.data!==undefined){
-      let value = this.props.data.humidity;
-      let element = document.getElementById(styles.progress_bar);
-      let width = 0;
-      let identity = setInterval(scene, 10);
-      function scene(){
-        if (width >= value){
-          clearInterval(identity)
-        }else{
-          width++;
-          element.style.width = width + '%';
-        }
-      }
-    }
   }
 
 }

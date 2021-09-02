@@ -91,6 +91,7 @@ export default class SearchingZone extends React.Component{
           return(<SearchResult 
             value={value} key={index}
             selectLocation = {this.props.changeLocation}
+            closeSearchZone = {this.props.changeHandler}
             />)
         })}
       </div>
@@ -106,7 +107,9 @@ const SearchResult = (props) => {
 
   return(
     <button className={styles.result_container} onClick={()=>{
-      props.selectLocation(value)}}>
+      props.selectLocation(value);
+      props.closeSearchZone();
+      }}>
       <h1>{value.title}</h1>
       <span className={["material-icons",styles.result_icon].join(' ')}>navigate_next</span>
     </button>

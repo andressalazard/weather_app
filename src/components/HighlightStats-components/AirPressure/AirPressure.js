@@ -12,10 +12,24 @@ export default class AirPressure extends React.Component{
   }
   
   componentDidMount(){
+    this.displayPressureValue();
+  }
+
+  componentDidUpdate(prevProps){
+    if(prevProps!==this.props){
+      this.clearValues();
+      this.displayPressureValue();
+    }
+  }
+
+  clearValues(){
+    this.setState({airCounter: 0})
+  }
+
+  displayPressureValue(){
     setInterval(()=>{
       this.handleChangeCounter();
     }, 5);
-
   }
 
   handleChangeCounter(){
