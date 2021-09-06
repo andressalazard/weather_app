@@ -9,6 +9,8 @@
   text-align: center;
 
   font-size: 1rem;
+
+  border-radius: 5px;
 }
 
 .weather_date {
@@ -60,4 +62,70 @@
 .tomorrow_header {
   margin: 0;
   font-size: 1.5rem;
+}
+
+/*Big-Size Screen (lower than 1200px)*/
+@media (max-width: 1199.98px) {
+  .container {
+    width: 13%;
+    padding: 1rem;
+    font-size: 0.5rem;
+  }
+
+  .weather_state {
+    width: 90%;
+    height: 90%;
+    transform: translateX(-8%);
+  }
+
+  .tomorrow_header {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  .marked_date h3 {
+    margin: 0;
+    font-size: 1.125rem;
+  }
+}
+
+/*Medium-Size Screen (lower than 992px)*/
+@media (max-width: 991.98px) {
+  .container {
+    width: 12%;
+    padding: 1rem;
+  }
+
+  .weather_state {
+    width: 95%;
+    height: 95%;
+  }
+
+  .tomorrow_header {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .marked_date h3 {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .weather_temp {
+    /* border: 1px solid yellow; */
+    padding: 0.5rem;
+    gap: 0.7rem;
+  }
+
+  .weather_temp h5 {
+    font-size: 0.95rem;
+  }
+}
+
+/*Small-Size Screen (lower than 768px)*/
+@media (max-width: 767.98px) {
+}
+
+/*Smallest Screen (lower than 576px)*/
+@media (max-width: 575.98px) {
 }

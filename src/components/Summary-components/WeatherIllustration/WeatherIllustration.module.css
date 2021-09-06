@@ -60,15 +60,16 @@
 /*Small-Size Screen (lower than 768px)*/
 @media (max-width: 767.98px) {
   .container {
-    /*TO-DO*/
-  }
-
-  .background {
-    /*TO-DO*/
+    height: 60vh;
   }
 
   .weather_icon {
-    /*TO-DO*/
+    height: 60vh;
+    transform: translate(-10%, -5%);
+  }
+
+  .background {
+    transform: translate(-7%, -5%);
   }
 }
 
