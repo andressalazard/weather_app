@@ -38,7 +38,11 @@ export default class WeatherSummary extends React.Component{
         zoneOpened={this.state.isSearching}
         changeHandler = {this.handleSearchZoneChange}
       />
-      <ButtonsZone displaySearchZone={this.handleSearchZoneChange}/>
+      <ButtonsZone
+        displaySearchZone={this.handleSearchZoneChange}
+        currentPosition = {this.props.currentPosition}
+        displayCurrentPositionWeather = {this.props.displayCurrentPositionWeather}
+      />
       {(this.props.summaryData) 
       && this.displayWeatherStatus()}
     </div>);
@@ -55,6 +59,7 @@ export default class WeatherSummary extends React.Component{
           <WeatherIllustration 
             weatherState={weatherData.state.key}/>
           <WeatherStatus
+            tempUnits = {this.props.tempUnits}
             temp = {weatherData.temperature} 
             weatherName = {weatherData.state.name}/>
         </div>
@@ -68,10 +73,12 @@ export default class WeatherSummary extends React.Component{
 
   getWeatherData(){
     let summaryData = this.props.summaryData;
+    let tempUnits = this.props.tempUnits;
+    let tempValue = summaryData.current_weather.the_temp; 
     return {
       location: summaryData.title,
-      temperature : summaryData
-      .current_weather.the_temp,
+      temperature : (tempUnits === 'celsius') ? 
+        tempValue : (tempValue * 1.8 + 32),
       state : {
         key : summaryData
         .current_weather.weather_state_abbr,
@@ -83,12 +90,26 @@ export default class WeatherSummary extends React.Component{
   }
 
   getDateTime(){
-    let date = new Date();
-    return {
-      day: date.getDay(),
-      date: date.getDate(),
-      month: date.getMonth()
-    } 
+    let currentWeather = this.props.summaryData.current_weather;
+    let applicable_date = currentWeather.applicable_date;
+    if(applicable_date.includes('-')){
+      let dateValues = applicable_date.split('-');
+      dateValues = dateValues.map((value)=>{
+        return parseInt(value);
+      });
+
+      let date = new Date(
+        dateValues[0],
+        dateValues[1] - 1,
+        dateValues[2]);
+
+      return {
+        day: date.getDay(),
+        date: date.getDate(),
+        month: date.getMonth()
+      } 
+
+    }    
   }
 
 

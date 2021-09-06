@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const URL_LOCATION_SEARCH = 'http://localhost:5050/api/weather/search/location/';
 export const URL_WEATHER_DATA_SEARCH = 'http://localhost:5050/api/weather/location/';
+export const URL_LATTLONG_SEARCH = 'http://localhost:5050/api/weather/search/lattlong/';
 
 
 export const getWeatherData = async (query) => { 

@@ -40,10 +40,14 @@ export default class IncomingWeather extends React.Component{
     return(
       <div className={styles.weather_temp}>
         <h5 className={styles.temp_value}>
-          {Math.round(temp.max)}°C</h5>
+          {Math.round(temp.max)}
+          {(this.props.tempUnits==='celsius')? '°C':'°F'}
+        </h5>
         <h5 className={[styles.temp_value,
           styles.min_temp].join(' ')}>
-          {Math.round(temp.min)}°C</h5>
+          {Math.round(temp.min)}
+          {(this.props.tempUnits==='celsius')? '°C':'°F'}
+        </h5>
       </div>
     )
   }

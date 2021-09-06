@@ -11,9 +11,12 @@ export default class InfoSection extends React.Component{
 
     return(
       <div className={styles.container}>
-        <TemperatureConverter/>
+        <TemperatureConverter
+          changeTempUnits={this.props.changeTempUnits}
+        />
         <WeatherForecast
-            forecastData={this.setForecastData()}/>
+            forecastData={this.setForecastData()}
+            tempUnits = {this.props.tempUnits}/>
         <Highlight 
             highlightData={this.setHighLightData()}/>
         <div className={styles.footer}>
@@ -28,6 +31,7 @@ export default class InfoSection extends React.Component{
 
   setForecastData(){
     let weatherData = this.props.weatherStatus;
+    let tempUnits = this.props.tempUnits;
     if(weatherData!==undefined){
       return weatherData.map((data) => {
         if(data!==weatherData[0]){
@@ -35,8 +39,8 @@ export default class InfoSection extends React.Component{
             date: (data===weatherData[1])? "Tomorrow" : data.applicable_date,
             weather_state_key: data.weather_state_abbr,
             temp:{
-              max: data.max_temp,
-              min: data.min_temp
+              max: (tempUnits==='celsius')?data.max_temp : (data.max_temp * 1.8 + 32),
+              min: (tempUnits==='celsius')?data.min_temp : (data.min_temp * 1.8 + 32)
             }
           }
         }

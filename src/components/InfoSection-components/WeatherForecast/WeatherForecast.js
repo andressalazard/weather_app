@@ -16,8 +16,9 @@ export default class WeatherForecast extends React.Component{
   displayIncomingWeatherList(){
     let forecastData = this.props.forecastData;
     return forecastData.map((data, index) => {
-      return <IncomingWeather data={data} key={`weather_${index}`}/>
+      return <IncomingWeather data={data} 
+        key={`weather_${index}`}
+        tempUnits={this.props.tempUnits}/>
     });
   }
-
 }

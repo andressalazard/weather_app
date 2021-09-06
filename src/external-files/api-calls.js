@@ -1,4 +1,4 @@
-import { URL_LOCATION_SEARCH, URL_WEATHER_DATA_SEARCH } from "./consults"
+import { URL_LATTLONG_SEARCH, URL_LOCATION_SEARCH, URL_WEATHER_DATA_SEARCH } from "./consults"
 import axios from "axios";
 
 export const getLocations = async (query) => {
@@ -17,4 +17,9 @@ export const getWeatherInfo = async (woeid) => {
     return response.data
   });
   return weatherData;
+}
+
+export const getMyLocationWeatherData = async (lattlong) => {
+  let url = URL_LATTLONG_SEARCH+`${lattlong}`;
+  return await axios.get(url);
 }
