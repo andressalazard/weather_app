@@ -1,9 +1,14 @@
 import axios from "axios";
 
+
+
 export const URL_LOCATION_SEARCH = 'http://localhost:5050/api/weather/search/location/';
 export const URL_WEATHER_DATA_SEARCH = 'http://localhost:5050/api/weather/location/';
 export const URL_LATTLONG_SEARCH = 'http://localhost:5050/api/weather/search/lattlong/';
 
+// export const URL_LOCATION_SEARCH = 'https://weather-app-middleware.vercel.app:5050/api/weather/search/location/'
+// export const URL_LATTLONG_SEARCH = 'https://weather-app-middleware.vercel.app:5050/api/weather/search/lattlong/'
+// export const URL_WEATHER_DATA_SEARCH = 'https://weather-app-middleware.vercel.app:5050/api/weather/location/'
 
 export const getWeatherData = async (query) => { 
   let url = URL_LOCATION_SEARCH+`${query}`;

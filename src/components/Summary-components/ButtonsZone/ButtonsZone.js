@@ -1,5 +1,4 @@
 import React from 'react';
-import { getMyLocationWeatherData } from '../../../external-files/api-calls';
 import styles from './ButtonsZone.module.css';
 
 

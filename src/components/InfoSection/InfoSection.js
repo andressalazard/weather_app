@@ -33,7 +33,7 @@ export default class InfoSection extends React.Component{
     let weatherData = this.props.weatherStatus;
     let tempUnits = this.props.tempUnits;
     if(weatherData!==undefined){
-      return weatherData.map((data) => {
+      return (weatherData.map((data) => {
         if(data!==weatherData[0]){
           return {
             date: (data===weatherData[1])? "Tomorrow" : data.applicable_date,
@@ -44,7 +44,7 @@ export default class InfoSection extends React.Component{
             }
           }
         }
-      }).slice(1);
+      }).slice(1));
     }
   }
 
