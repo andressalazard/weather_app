@@ -44,6 +44,7 @@ export default class InfoSection extends React.Component{
             }
           }
         }
+        return {};
       }).slice(1));
     }
   }
